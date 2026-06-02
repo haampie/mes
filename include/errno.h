@@ -59,6 +59,7 @@ extern int errno;
 #define ENAMETOOLONG 36
 #define ENOSYS  38
 #define ELOOP   40
+#define ENOTSUP 95   /* == EOPNOTSUPP on Linux */
 
 #if !__MESC__ && ! __M2__
 //extern char const *const sys_errlist[];
