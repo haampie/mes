@@ -31,6 +31,8 @@
 
 #else // ! SYSTEM_LIBC
 
+#include <sys/types.h>          /* off_t, pid_t for struct flock */
+
 // *INDENT-OFF*
 #if __linux__
 #define O_RDONLY          0
@@ -40,6 +42,8 @@
 #define O_EXCL         0x80
 #define O_TRUNC       0x200
 #define O_APPEND      0x400
+#define O_NONBLOCK    0x800
+#define O_CLOEXEC   0x80000
 
 #if defined (__arm__) || defined (__aarch64__) || defined (__riscv)
 #define O_DIRECTORY   0x4000
@@ -67,11 +71,27 @@
 
 #define FD_CLOEXEC 1
 
-#define F_DUPFD 0
-#define F_GETFD 1
-#define F_SETFD 2
-#define F_GETFL 3
-#define F_SETFL 4
+#define F_DUPFD  0
+#define F_GETFD  1
+#define F_SETFD  2
+#define F_GETFL  3
+#define F_SETFL  4
+#define F_GETLK  5
+#define F_SETLK  6
+#define F_SETLKW 7
+
+#define F_RDLCK  0
+#define F_WRLCK  1
+#define F_UNLCK  2
+
+struct flock
+{
+  short l_type;
+  short l_whence;
+  off_t l_start;
+  off_t l_len;
+  pid_t l_pid;
+};
 
 #define creat(file_name, mode) open (file_name, O_WRONLY | O_CREAT | O_TRUNC, mode)
 int dup (int old);
