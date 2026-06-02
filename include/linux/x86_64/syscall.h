@@ -97,6 +97,9 @@
 #define SYS_readlink  0x59
 #define SYS_mknod     0x85
 
+// make+POSIX
+#define SYS_ftruncate 0x4d
+
 /* gash */
 #define SYS_umask     0x5f
 #define SYS_utimensat 0x118

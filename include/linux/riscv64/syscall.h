@@ -93,6 +93,7 @@
 
 // make+POSIX
 #define SYS_rt_sigprocmask 135
+#define SYS_ftruncate      46
 
 // tar
 #define SYS_symlinkat      36

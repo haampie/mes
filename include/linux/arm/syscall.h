@@ -90,6 +90,7 @@
 
 /* make+WITH_GLIBC */
 #define SYS_rt_sigprocmask 0xaf
+#define SYS_ftruncate      0x5d
 
 /* tar */
 #define SYS_symlink   0x53
@@ -107,6 +108,10 @@
 #define SYS_fstat64    0xc5
 #define SYS_fcntl64    0xdd
 #define SYS_getdents64 0xdc
+#define SYS_ftruncate64 0xc2
+
+#undef SYS_ftruncate
+#define SYS_ftruncate SYS_ftruncate64
 
 #undef SYS_stat
 #define SYS_stat SYS_stat64

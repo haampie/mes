@@ -267,6 +267,7 @@ $CC -g -D HAVE_CONFIG_H=1                               \
     lib/linux/fork.c                                    \
     lib/linux/fstat.c                                   \
     lib/linux/fsync.c                                   \
+    lib/linux/ftruncate.c                               \
     lib/linux/_getcwd.c                                 \
     lib/linux/getdents.c                                \
     lib/linux/gettimeofday.c                            \
