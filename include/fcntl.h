@@ -41,7 +41,7 @@
 #define O_TRUNC       0x200
 #define O_APPEND      0x400
 
-#ifdef __arm__
+#if defined (__arm__) || defined (__aarch64__) || defined (__riscv)
 #define O_DIRECTORY   0x4000
 #define O_TMPFILE   0x404000
 #else
