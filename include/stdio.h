@@ -57,6 +57,7 @@
 
 FILE *fdopen (int fd, char const *mode);
 FILE *fopen (char const *file_name, char const *mode);
+FILE *tmpfile (void);
 int eputc (int c);
 int eputs (char const *s);
 int fclose (FILE * stream);

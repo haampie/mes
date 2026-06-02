@@ -311,6 +311,7 @@ lib/stdio/remove.c
 lib/stdio/snprintf.c
 lib/stdio/sprintf.c
 lib/stdio/sscanf.c
+lib/stdio/tmpfile.c
 lib/stdio/vfprintf.c
 lib/stdio/vprintf.c
 lib/stdio/vsnprintf.c
