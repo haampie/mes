@@ -65,6 +65,8 @@ typedef __builtin_va_list va_list;
 #define va_arg8(ap, type)  va_arg (ap, type)
 #define va_copy(d, s)      __builtin_va_copy (d, s)
 
+#elif __TINYC__ && __x86_64__
+#include "tcc_x86_64_stdarg.h"
 #else // ! SYSTEM_LIBC && ! __riscv
 
 #include <sys/types.h>
