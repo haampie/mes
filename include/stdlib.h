@@ -69,6 +69,8 @@ unsigned long long strtoull (char const *string, char **tailptr, int base);
 
 void *bsearch (void const *key, void const *array, size_t count, size_t size, comparison_fn_t compare);
 
+char *mktemp (char *templ);
+
 #endif // ! SYSTEM_LIBC
 
 #endif // __MES_STDLIB_H
