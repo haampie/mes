@@ -251,6 +251,7 @@ lib/linux/lstat.c
 lib/linux/_open3.c
 lib/linux/malloc.c
 lib/linux/mkdir.c
+lib/linux/mkfifo.c
 lib/linux/nanosleep.c
 lib/linux/pipe.c
 lib/linux/_read.c

@@ -275,6 +275,7 @@ $CC -g -D HAVE_CONFIG_H=1                               \
     lib/linux/link.c                                    \
     lib/linux/lstat.c                                   \
     lib/linux/mkdir.c                                   \
+    lib/linux/mkfifo.c                                  \
     lib/linux/nanosleep.c                               \
     lib/linux/_open3.c                                  \
     lib/linux/read.c                                    \
