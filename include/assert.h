@@ -17,19 +17,27 @@
  * You should have received a copy of the GNU General Public License
  * along with GNU Mes.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef __MES_ASSERT_H
-#define __MES_ASSERT_H 1
 
 #if SYSTEM_LIBC
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
 #endif
-#undef __MES_ASSERT_H
 #include_next <assert.h>
 #else // ! SYSTEM_LIBC
-#define assert(x) ((x) ? (void)0 : __assert_fail (#x, 0, 0, 0))
+
+#ifndef __MES_ASSERT_H_PROTO
+#define __MES_ASSERT_H_PROTO 1
 void __assert_fail (char const *s, char const *file, unsigned line,
                     char const *function);
-#endif // ! SYSTEM_LIBC
+#endif
 
-#endif // __MES_ASSERT_H
+/* <assert.h> is re-includable and should re-evaluate NDEBUG on each
+   inclusion, so the macro is outside the include guard */
+#undef assert
+#ifdef NDEBUG
+# define assert(e) ((void) 0)
+#else
+# define assert(e) ((e) ? (void)0 : __assert_fail (#e, __FILE__, __LINE__, 0))
+#endif
+
+#endif // ! SYSTEM_LIBC
