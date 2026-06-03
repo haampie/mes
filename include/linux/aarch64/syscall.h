@@ -92,4 +92,7 @@
 #define SYS_umask          166
 #define SYS_utimensat      88
 
+// make
+#define SYS_ftruncate      46
+
 #endif // __MES_LINUX_AARCH64_SYSCALL_H
